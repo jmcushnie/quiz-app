@@ -9,7 +9,23 @@
 </head>
 <body>
     <div class="quiz-container">
-        <div id="quiz"></div>
+        <div id="quiz">
+            <h2 id="question">Question</h2>
+            <ul>
+                <li>
+                    <input type="radio" id="a" name="answer">
+                    <label id="a_text" for="a">Question</label>
+                </li>
+                <li>
+                    <input type="radio" id="b" name="answer">
+                    <label id="b_text" for="b">Question</label>
+                </li>
+                <li>
+                    <input type="radio" id="c" name="answer">
+                    <label id="c_text" for="c">Question</label>
+                </li>
+            </ul>
+        </div>
         <button id="submit">Submit</button>
     </div>
     <script src="script.js"></script>
