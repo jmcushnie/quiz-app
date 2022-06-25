@@ -56,6 +56,7 @@ const quizQuestions = [
 ];
 
 let currentQuestion = 0;
+let score = 0;
 
 loadQuiz();
 
@@ -70,16 +71,37 @@ function loadQuiz() {
     
 }
 
+function getSelected(){
+    const answerEls = document.querySelectorAll(".answer");
+
+    let answer = undefined;
+
+    answerEls.forEach((answerEl) => {
+        if(answerEl.checked) {
+            answer = answerEl.id;
+        } 
+    });
+
+    return answer
+    
+} 
+
+
 const submitBtn = document.getElementById("submit")
 submitBtn.addEventListener('click', () => {
-    currentQuestion++;
+    
+    const answer = getSelected();
 
+    console.log(answer);
+    
+    if (answer) {
+    currentQuestion++;
     if(currentQuestion < quizQuestions.length) {
         loadQuiz();
     } else {
         alert(" You finished!!")
     }
+}
 
-    loadQuiz();
 });
 
