@@ -10,7 +10,7 @@ body {
     background: linear-gradient(to right, #355c7d, #6c5b7b, #c06c84);
 }
 
-.quiz-container {
+#quiz-container {
     width: 50vw;
     height: 50vh;
     display: flex;

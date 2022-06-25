@@ -1,4 +1,4 @@
-const quizContainer = document.getElementById("quiz")
+
 const answerEls = document.querySelectorAll(".answer");
 const a_text = document.getElementById("a_text")
 const b_text = document.getElementById("b_text")
@@ -103,14 +103,17 @@ submitBtn.addEventListener('click', () => {
     
     if (answer) {
         //correct answer
-        if(answer === quizQuestions[currentQuestion].correct) {
+        if(answer === quizQuestions[currentQuestion].correctAnswer) {
             score++;
         }
     currentQuestion++;
     if(currentQuestion < quizQuestions.length) {
         loadQuiz();
     } else {
-        alert(" You finished!!")
+        //show results
+        const quizContainer = document.getElementById("quiz-container")
+        quizContainer.innerHTML = `<h2 style = 'color:white' > You answered ${score} out of ${quizQuestions.length}
+        correctly! </h2>`
     }
 }
 
